@@ -30,12 +30,12 @@ namespace copylinkedlist
 
         private static void WriteCopyright()
         {
-            string copyrightYear = "2020";
-            if (DateTime.Now.Year > 2020)
+            string copyrightYear = Consts.c_CopyrightYear.ToString();
+            if (DateTime.Now.Year > Consts.c_CopyrightYear)
             {
                 copyrightYear += $"-{DateTime.Now.Year}";
             }
-            Log.Information($"copylinkedlist - Copyright © {copyrightYear}");
+            Log.Information($"{Consts.c_CopyrightFormat}{copyrightYear}");
 
         }
     }

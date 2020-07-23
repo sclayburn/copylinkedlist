@@ -1,4 +1,5 @@
 ﻿using copylinkedlist.Options;
+using copylinkedlistshared;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -7,8 +8,17 @@ namespace copylinkedlist.Validation
 {
     public class ValidateCmdLine
     {
+        /// <summary>
+        /// Ensure that the command line options are valid and within bounds
+        /// </summary>
+        /// <param name="opts">CmdLineOptions object that contains the parsed command line args</param>
         public void IsCmdLineValid(CmdLineOptions opts)
         {
+            if (opts == null)
+            {
+                throw new ArgumentNullException(Consts.c_paramNameOpts);
+            }
+
             IsLengthValid(opts.Length);
         }
 
@@ -16,12 +26,12 @@ namespace copylinkedlist.Validation
         {
             if (length < 1)
             {
-                throw new ArgumentException("Length is required to be greater than zero");
+                throw new ArgumentOutOfRangeException(Consts.c_paramNameLength, Consts.c_argExceptionDescLengthZero);
             }
 
-            if (length > 1024)
+            if (length > 10000000)
             {
-                throw new ArgumentException("Length is required to be less than 1024");
+                throw new ArgumentOutOfRangeException(Consts.c_paramNameLength, Consts.c_argExceptionDescLengthLessThanTenMil);
             }
         }
     }
