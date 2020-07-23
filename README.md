@@ -1,9 +1,10 @@
 # copylinkedlist
 
-Language - C#
-Description - Copy random reference singly linked list
-Time Complexity - O(n)
-Auxiliary Space - O(1)
+* Language - **C#**
+* Runtime - **DotNet Core 3.1**
+* Description - **Copy random reference singly linked list**
+* Time Complexity - **O(n)**
+* Auxiliary Space - **O(1)**
 
 ## Development & Debugging
 
