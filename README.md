@@ -16,14 +16,16 @@ Auxiliary Space - O(1)
 
 From a command prompt in the root of the repo
 
-**Run Tests**
-!!! bash
-dotnet test
-!!!
+### Run Tests
 
-**Run console app**
-!!! bash
+```bash
+dotnet test
+```
+
+### Run console app
+
+```bash
 dotnet run --project src duplist -l 10
-!!!
+```
 
 Replace 10 with the number of items in the list that you would like to be generated
