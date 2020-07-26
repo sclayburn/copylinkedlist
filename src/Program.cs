@@ -1,10 +1,10 @@
-﻿using System;
-using System.Threading.Tasks;
-using CommandLine;
-using Serilog;
-using CopyLinkedList.Options;
+﻿using CommandLine;
 using CopyLinkedList.Managers;
+using CopyLinkedList.Options;
 using CopyLinkedListShared;
+using Serilog;
+using System;
+using System.Threading.Tasks;
 
 namespace CopyLinkedList
 {

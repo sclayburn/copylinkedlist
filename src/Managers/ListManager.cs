@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Text;
-using System.Threading.Tasks;
-using CopyLinkedList.Options;
+﻿using CopyLinkedList.Options;
 using CopyLinkedList.Validation;
 using CopyLinkedListShared;
+using System;
+using System.Threading.Tasks;
 
 namespace CopyLinkedList.Managers
 {
@@ -22,12 +19,12 @@ namespace CopyLinkedList.Managers
             {
                 throw new ArgumentNullException(nameof(opts));
             }
-            
+
             // Validate Input
             ValidateCmdLine val = new ValidateCmdLine();
             val.IsCmdLineValid(opts);
-            
-            await Task.Run(() => 
+
+            await Task.Run(() =>
             {
                 Node rootNode = Helpers.CreateRandomList(opts.Length);
                 Node dupNode = Node.DuplicateList(rootNode);
