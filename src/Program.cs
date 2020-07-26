@@ -2,11 +2,11 @@
 using System.Threading.Tasks;
 using CommandLine;
 using Serilog;
-using copylinkedlistshared;
-using copylinkedlist.Options;
-using copylinkedlist.Managers;
+using CopyLinkedList.Options;
+using CopyLinkedList.Managers;
+using CopyLinkedListShared;
 
-namespace copylinkedlist
+namespace CopyLinkedList
 {
     class Program
     {
@@ -20,8 +20,8 @@ namespace copylinkedlist
 
             int exitCode = await Parser.Default.ParseArguments<CmdLineOptions, object>(args)
             .MapResult(
-                (CmdLineOptions opts) => ListManager.RunAndReturnExitCode(opts),
-                errs => Task.FromResult(Consts.c_ExitCodeFailure));
+                (CmdLineOptions opts) => ListManager.RunAndReturnExitCodeAsync(opts),
+                errs => Task.FromResult(Consts.c_exitCodeFailure));
 
             Log.CloseAndFlush();
 
@@ -30,12 +30,12 @@ namespace copylinkedlist
 
         private static void WriteCopyright()
         {
-            string copyrightYear = Consts.c_CopyrightYear.ToString();
-            if (DateTime.Now.Year > Consts.c_CopyrightYear)
+            string copyrightYear = Consts.c_copyrightYear.ToString();
+            if (DateTime.Now.Year > Consts.c_copyrightYear)
             {
                 copyrightYear += $"-{DateTime.Now.Year}";
             }
-            Log.Information($"{Consts.c_CopyrightFormat}{copyrightYear}");
+            Log.Information($"{Consts.c_copyrightFormat}{copyrightYear}");
 
         }
     }

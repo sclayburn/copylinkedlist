@@ -1,22 +1,23 @@
-﻿using copylinkedlist.Options;
-using copylinkedlistshared;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Runtime.InteropServices.ComTypes;
 using System.Text;
+using CopyLinkedList.Options;
+using CopyLinkedListShared;
 
-namespace copylinkedlist.Validation
+namespace CopyLinkedList.Validation
 {
     public class ValidateCmdLine
     {
         /// <summary>
-        /// Ensure that the command line options are valid and within bounds
+        /// Ensure that the command line options are valid and within bounds.
         /// </summary>
-        /// <param name="opts">CmdLineOptions object that contains the parsed command line args</param>
+        /// <param name="opts"><see cref="CmdLineOptions"/> object that contains the parsed command line args.</param>
         public void IsCmdLineValid(CmdLineOptions opts)
         {
             if (opts == null)
             {
-                throw new ArgumentNullException(Consts.c_paramNameOpts);
+                throw new ArgumentNullException(nameof(opts));
             }
 
             IsLengthValid(opts.Length);
@@ -26,12 +27,12 @@ namespace copylinkedlist.Validation
         {
             if (length < 1)
             {
-                throw new ArgumentOutOfRangeException(Consts.c_paramNameLength, Consts.c_argExceptionDescLengthZero);
+                throw new ArgumentOutOfRangeException(nameof(length), Consts.c_argExceptionDescLengthZero);
             }
 
             if (length > 10000000)
             {
-                throw new ArgumentOutOfRangeException(Consts.c_paramNameLength, Consts.c_argExceptionDescLengthLessThanTenMil);
+                throw new ArgumentOutOfRangeException(nameof(length), Consts.c_argExceptionDescLengthLessThanTenMil);
             }
         }
     }

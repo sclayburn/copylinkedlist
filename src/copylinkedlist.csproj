@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\shared\copylinkedlistshared.csproj" />
+    <ProjectReference Include="..\shared\CopyLinkedList.Shared.csproj" />
   </ItemGroup>
 
 </Project>

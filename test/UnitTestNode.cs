@@ -1,9 +1,8 @@
-using System;
-using Xunit;
+using CopyLinkedListShared;
 using FluentAssertions;
-using copylinkedlistshared;
+using Xunit;
 
-namespace copylinkedlisttest
+namespace CopyLinkedListTest
 {
     public class UnitTestNode
     {
@@ -13,9 +12,7 @@ namespace copylinkedlisttest
         [Fact]
         public void NodeConstructsCorrectly()
         {
-            Node node = new Node();
-
-            node.Should().NotBeNull();
+            new Node().Should().NotBeNull();
         }
 
         /// <summary>
@@ -25,9 +22,9 @@ namespace copylinkedlisttest
         public void SetTag()
         {
             Node node = new Node();
-            node.SetTag(Consts.c_RootTag);
+            node.SetTag(Consts.c_rootTag);
 
-            node.GetTag().Should().Be(Consts.c_RootTag);
+            node.GetTag().Should().Be(Consts.c_rootTag);
         }
 
         /// <summary>
@@ -88,7 +85,7 @@ namespace copylinkedlisttest
         {
             Node rootNode = Helpers.CreateRandomList(1);
             rootNode.SetReference(null);
-            
+
             Node dupNode = Node.DuplicateList(rootNode);
 
             Helpers.AreListsIdentical(rootNode, dupNode).Should().BeTrue();

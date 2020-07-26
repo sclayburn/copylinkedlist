@@ -3,27 +3,27 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
 using System.Threading.Tasks;
-using copylinkedlist.Options;
-using copylinkedlist.Validation;
-using copylinkedlistshared;
+using CopyLinkedList.Options;
+using CopyLinkedList.Validation;
+using CopyLinkedListShared;
 
-namespace copylinkedlist.Managers
+namespace CopyLinkedList.Managers
 {
     public class ListManager
     {
         /// <summary>
-        /// Manager that will handle running the list cmdline options and return a status code to the caller
+        /// Manager that will handle running the list cmdline options and return a status code to the caller.
         /// </summary>
-        /// <param name="opts">CmdLineOptions object that contains the parsed command line args</param>
-        /// <returns>Error Code.  0 = Success, 1 = Failure</returns>
-        public static async Task<int> RunAndReturnExitCode(CmdLineOptions opts)
+        /// <param name="opts"><see cref="CmdLineOptions"/> object that contains the parsed command line args.</param>
+        /// <returns>Error Code.  0 = Success, 1 = Failure.</returns>
+        public static async Task<int> RunAndReturnExitCodeAsync(CmdLineOptions opts)
         {
             if (opts == null)
             {
-                throw new ArgumentNullException(Consts.c_paramNameOpts);
+                throw new ArgumentNullException(nameof(opts));
             }
             
-            //Validate Input
+            // Validate Input
             ValidateCmdLine val = new ValidateCmdLine();
             val.IsCmdLineValid(opts);
             
@@ -34,7 +34,7 @@ namespace copylinkedlist.Managers
                 Helpers.PrintLists(rootNode, dupNode);
             });
 
-            return Consts.c_ExitCodeSuccess;
+            return Consts.c_exitCodeSuccess;
         }
     }
 }

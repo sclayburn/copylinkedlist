@@ -4,6 +4,8 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
 
     <IsPackable>false</IsPackable>
+
+    <RootNamespace>CopyLinkedListTest</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -21,8 +23,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\shared\copylinkedlistshared.csproj" />
-    <ProjectReference Include="..\src\copylinkedlist.csproj" />
+    <ProjectReference Include="..\shared\CopyLinkedList.Shared.csproj" />
+    <ProjectReference Include="..\src\CopyLinkedList.csproj" />
   </ItemGroup>
 
 </Project>
