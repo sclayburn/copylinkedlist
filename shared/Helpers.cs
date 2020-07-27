@@ -4,6 +4,9 @@ using System.Security.Cryptography;
 
 namespace CopyLinkedListShared
 {
+    /// <summary>
+    /// Generic & misc helper functions.
+    /// </summary>
     public static class Helpers
     {
         /// <summary>

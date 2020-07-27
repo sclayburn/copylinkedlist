@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace CopyLinkedList.Managers
 {
+    /// <summary>
+    /// Is the translation interface between the CommandLineParser assembly and the copy logic.
+    /// </summary>
     public class ListManager
     {
         /// <summary>

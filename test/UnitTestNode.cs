@@ -4,6 +4,9 @@ using Xunit;
 
 namespace CopyLinkedListTest
 {
+    /// <summary>
+    /// Unit tests for the <see cref="Node"/> class.
+    /// </summary>
     public class UnitTestNode
     {
         /// <summary>

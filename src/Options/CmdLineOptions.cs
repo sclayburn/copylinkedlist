@@ -2,6 +2,9 @@
 
 namespace CopyLinkedList.Options
 {
+    /// <summary>
+    /// Defines the valid commandline options that the CommandLineParser assembly will accept.
+    /// </summary>
     [Verb("duplist", HelpText = "Generate a random list and duplicate that list in memory")]
     public class CmdLineOptions
     {

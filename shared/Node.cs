@@ -1,5 +1,8 @@
 ﻿namespace CopyLinkedListShared
 {
+    /// <summary>
+    /// <see cref="Node"/> implementation.  Implements the singly linked list with references and the static duplicate function.
+    /// </summary>
     public class Node
     {
         Node next;

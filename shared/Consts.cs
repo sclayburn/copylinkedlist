@@ -1,5 +1,10 @@
 ﻿namespace CopyLinkedListShared
 {
+    /// <summary>
+    /// Allows for the centralization of all const char strings in the project.  
+    /// This is a preference thing, but I like having all my const char strings in a 
+    /// central place rather than scattered around at the top of each file.
+    /// </summary>
     public static class Consts
     {
         public const string c_argExceptionDescMaxDepth = "maxDepth must be greater than 0";
