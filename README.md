@@ -26,7 +26,7 @@ dotnet test
 ### Run console app
 
 ```bash
-dotnet run --project src duplist -l 10
+dotnet run --project src -c Release duplist -l 10
 ```
 
 Replace 10 with the number of items in the list that you would like to be generated
